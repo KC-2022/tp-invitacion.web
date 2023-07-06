@@ -16,7 +16,7 @@ crossorigin="anonymous">
 <div id="app" class="container">
 <h1>Asistencias Confirmadas</h1>
 <br>
-<a class="btn btn-primary" href="https://tp-invitacion-web.netlify.app/asistencia_nuevo.html">Nuevo</a>
+<a class="btn btn-primary" href="https://tp-invitacion-web.netlify.app/asistencia_nuevo">Nuevo</a>
 <br><br>
 <div v-if="error">
 <p>Lo sentimos , ........</p>
@@ -43,7 +43,7 @@ crossorigin="anonymous">
 <td>{{asistencia.nombre}}</td>
 <td>{{asistencia.correo}}</td>
 <td>
-<a class="btn btn-primary" :href="'https://tp-invitacion-web.netlify.app/asistencia_editar.html?id='+ asistencia.id" >Editar</a>
+<a class="btn btn-primary" :href="'https://tp-invitacion-web.netlify.app/asistencia_editar?id='+ asistencia.id" >Editar</a>
 <button type="button" class="btn btn-danger" v-on:click="eliminar(asistencia.id)" >Eliminar</button>
 </td>
 </tr>

@@ -4,7 +4,7 @@ createApp({
   data() {
     return {
       asistencia: [],
-      url: 'https://karlaconty.pythonanywhere.com/asistencia',
+      url: 'hhttps://tp-invitacion-web.netlify.app/asistencia',
       error: false,
       cargando: true,
       id: 0,

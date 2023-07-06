@@ -8,7 +8,7 @@ return {
 id:"",
 nombre:"",
 correo:"",
-url:'https://karlaconty.pythonanywhere.com/asistencia/'+id,
+url:'https://tp-invitacion-web.netlify.app/asistencia/'+id,
 }
 },  
 methods: {
