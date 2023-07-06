@@ -8,7 +8,7 @@ return {
 id:"",
 nombre:"",
 correo:"",
-url:'https://tp-invitacion-web.netlify.app/asistencia/'+id,
+url:'https://karlaconty.pythonanywhere.com/asistencia/'+id,
 }
 },  
 methods: {
@@ -41,7 +41,7 @@ redirect: 'follow'
 fetch(this.url, options)    
 .then(function () {
 alert("Registro modificado")
-window.location.href = "https://tp-invitacion-web.netlify.app";
+window.location.href = "https://tp-invitacion-web.netlify.app/";
 })
 .catch(err => {
 console.error(err);
