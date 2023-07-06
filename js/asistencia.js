@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-      productos: [],
+      asistencia: [],
       url: 'https://karlaconty.pythonanywhere.com/asistencia',
       error: false,
       cargando: true,
