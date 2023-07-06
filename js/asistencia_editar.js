@@ -41,7 +41,7 @@ redirect: 'follow'
 fetch(this.url, options)    
 .then(function () {
 alert("Registro modificado")
-window.location.href = "../templates/asistencia.html";
+window.location.href = "https://tp-invitacion-web.netlify.app";
 })
 .catch(err => {
 console.error(err);

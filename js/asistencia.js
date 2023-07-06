@@ -57,7 +57,7 @@ createApp({
       fetch(this.url, options)
         .then(() => {
           alert("Registro grabado");
-          window.location.href = "./index.html";
+          window.location.href = "https://tp-invitacion-web.netlify.app/";
         })
         .catch(err => {
           console.error(err);
