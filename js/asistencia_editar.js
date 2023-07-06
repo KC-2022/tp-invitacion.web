@@ -8,7 +8,7 @@ return {
 id:"",
 nombre:"",
 correo:"",
-url:'http://localhost:5000/asistencia/'+id,
+url:'https://karlaconty.pythonanywhere.com/asistencia/'+id,
 }
 },  
 methods: {

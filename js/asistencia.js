@@ -4,7 +4,7 @@ createApp({
   data() {
     return {
       productos: [],
-      url: 'http://localhost:5000/asistencia',
+      url: 'https://karlaconty.pythonanywhere.com/asistencia',
       error: false,
       cargando: true,
       id: 0,
