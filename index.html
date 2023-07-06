@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="color-scheme" content="light">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css\stylo.css">
+    <link rel="icon" type="image/png" href=""/>
+    <title>Miss Quince</title>
+</head>
+<body>
+    <!--Inicio header-->
+    <header class="header">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <a href="#" class="logo"><span>Miss</span>Quince</a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#ubicacion">Recepcion</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#playlist">Play List</a>
+        </nav>
+        <div class="login-btn">
+            <button class="btn">Confirma</button>
+            <i class="far fa-check-circle"></i>
+        </div>
+    </header>
+    <!--fin header--> 
+    <!--box confirmar asistencia-->
+    <div class="login-form-container"  id="app">     
+        <span class="fas fa-times" id="close-login-form"></span>
+        <form method="POST">  
+            <h3>Confirmar asistencia</h3>
+            <input type="email" id="email" name="email" required placeholder="Correo Electrónico" class="box" v-model="correo">
+            <input type="name" id="nombre" name="nombre" required placeholder="Nombre Completo" class="box" v-model="nombre">
+            <input type="submit" value="enviar" onclick="return validarFormulario()" class="btn" v-on:click="grabar()">
+            <p>o confirmar por WhatssApp</p>
+            <div class="buttons">
+                <a href="" target="_blank" class="btn">Mama</a>
+                <a href="" target="_blank" class="btn">Papa</a>
+            </div>
+        </form>
+    </div>
+    <!--home-->
+    <section class="home" id="home">
+        <h1 class="home-parallax" data-speed="-2">Mis Quince Años</h1>
+        <img class="home-parallax" data-speed="5" src="img\home_png.png" alt="">
+        <h2 class="heading"> <span>Cuenta</span> Regresiva</h1>
+        <div class="countdown" id="countdown">
+            <div class="countdown-item days-count">
+              <div class="number">00</div>
+              <div class="text">Days</div>
+            </div>
+            <div class="countdown-item hours-count">
+              <div class="number">00</div>
+              <div class="text">Hours</div>
+            </div>
+            <div class="countdown-item mins-count">
+              <div class="number">00</div>
+              <div class="text">Minutes</div>
+            </div>
+            <div class="countdown-item secs-count">
+              <div class="number">00</div>
+              <div class="text">Seconds</div>
+            </div>
+          </div>
+    </section> 
+    <!---->
+    <section class="ubicacion" id="ubicacion">
+        <h1 class="heading"> <span>ubicación</span> evento</h1>
+        
+        <div class="row">
+            <iframe class="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.4135736193325!2d-64.22036202577151!3d-31.430279396920604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a272a716e2e7%3A0xbb83e424f77c4280!2sMira%20Eventos!5e0!3m2!1ses!2sar!4v1683327119651!5m2!1ses!2sar"
+                allowfullscreen="" loading="lazy"></iframe>
+            
+            <form action="">
+                <h3><img src="img\mira-logo.png" alt=""> Mira Eventos</h3><br>
+                <p><i class="fa fa-map"></i> Direccion: Av. Fuerza Aerea Argentina 2170</p><br>
+                <p><i class="fa fa-calendar"></i> Fecha: viernes 20 de Octubre</p><br>
+                <p><i class="fa fa-clock"></i> Horario: 21:00hs</p><br>
+                <p><i class="fa fa-person-dress"></i> Dress Code: Formal Sport</p><br>
+            </form>
+                
+        </div> 
+    </section>
+    <section class="icons-container">
+        <div class="icons">
+            <i class="fas fa-music"></i>
+            <div class="content">
+                <h3>Musica</h3>
+                <p>La mejor!</p>
+            </div>
+        </div>
+        <div class="icons">
+            <i class="fas fas fa-users"></i>
+            <div class="content">
+                <h3>Amig@s</h3>
+                <p>The Bests</p>
+            </div>
+        </div>
+        <div class="icons">
+            <i class="fas fa-users"></i>
+            <div class="content">
+                <h3>Familia</h3>
+                <p>Mi mejor regalo</p>
+            </div>
+        </div>
+        <div class="icons">
+            <i class="fas fa-smile"></i>
+            <div class="content">
+                <h3>Diversion</h3>
+                <p>Toda la noche</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="galeria" id="galeria">
+        <h1 class="heading">Mis <span>Recuerdos</span></h1>
+    
+        <div class="swiper galeria-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box">
+                    <img src="img\b-1.png" alt="">
+                    <div class="content">
+                        <a href="" target="_blank" class="btn"><ion-icon name="logo-instagram" id="insta"></ion-icon> Follow Me</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="img\b-2.png" alt="">
+                    <div class="content">
+                        <a href="" target="_blank" class="btn"><ion-icon name="logo-instagram" id="insta"></ion-icon> Follow Me</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="img\b-3.png" alt="">
+                    <div class="content">
+                        <a href="" target="_blank" class="btn"><ion-icon name="logo-instagram" id="insta"></ion-icon> Follow Me</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="img\b-4.png" alt="">
+                    <div class="content">
+                        <a href="" target="_blank" class="btn"><ion-icon name="logo-instagram" id="insta"></ion-icon> Follow Me</a>
+                    </div>
+                </div>
+               
+                <div class="swiper-slide box">
+                    <img src="img\b-5.png" alt="">
+                    <div class="content">
+                        <a href="" target="_blank" class="btn"><ion-icon name="logo-instagram" id="insta"></ion-icon> Follow Me</a>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section class="playlist" id="playlist">
+        <h1 class="heading"> <span>Play</span> Lists</h1>
+        <div class="row">
+            <iframe class="video-y" src="https://www.youtube.com/embed/videoseries?list=PLQE6fwKhgam6Eolo12Oy7CWQZKh-RR2Jq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="data-play">
+                <h3><i class="fas fa-music"></i> Brisa Fifteen Party Playlist</h3>
+                <p><i class="fa fa-check"></i> Ayudame a armar la mejor lista de música!<br>
+                <i class="fa fa-check"></i>Agrega tus favoritos a mi Playlist<a href="https://www.youtube.com/playlist?list=PLQE6fwKhgam6Eolo12Oy7CWQZKh-RR2Jq&jct=SezzKcVmburNI_jNYodVu1b5yInY6Q" target="_blank"> Aquí!</a> <br>
+               </p>
+            </div>
+        </div>
+        <div id="embed-iframe"></div>
+    </section>
+    
+    <section class="parallax-instagram instagram d-flex justify-content-center align-items-center">
+
+
+        <div class="contenido">
+      
+          <img src="img\icono-instagram.svg" alt="" class="bounce-in">
+      
+          <br>
+      
+          <span class="hashtag">#BrisaFifteenParty</span>
+          <p>¡Preparate para esta gran fiesta!<br>
+      Seguime en mi cuenta de Instagram y etiquetame en tus fotos y videos.</p>
+      
+          <a target="_blank" href="" target="_blank" class="btn">Ver instagram</a>
+      
+        </div>
+      
+      
+      </section>
+    <!--inicio pie de pagina--> 
+    <footer>
+        <ul class="social_icon">
+            <li><a href="" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li><a href="" target="_blank"><ion-icon name="mail-open-outline"></ion-icon></a></li>
+            <li><a href="" target="_blank"><ion-icon name="logo-whatsapp"></ion-icon></a></li>
+          </ul>
+          <ul class="menu">
+            <li><a href="" target="_blank"><ion-icon name="logo-whatsapp"></ion-icon> Clic aquí para confirmar asistencia!</a></li>
+          </ul>
+          <p>&copy2023 | Todos los Derechos Reservados</p>
+        </footer>
+    </footer>
+<!-- Modal de bienvenida -->
+<div id="modal-bienvenida" class="modal">
+    <div class="modal-content">
+      <h2>Bienvenid@</h2>
+      <p>A la invitación Web de Brisa.</p>
+      <button class="btn" id="boton-ingresar">Ingresar</button>
+    </div>
+  </div>    
+  
+<div class="musicaOff hidden    " target="_blank" id="sonidoMusicaOff" style="cursor: pointer;">
+    <i class="fa fa-volume-up flotante" id="iconoMusica"></i>
+</div>
+<div class="musicaOn" target="_blank" id="sonidoMusicaOn" style="cursor: pointer;">
+    <img src="img\musica-on-4.gif">
+</div>
+
+<audio id="musica" src="img\Arctic Monkeys.mp3" autoplay="autoplay" loop="loop" preload="auto"></audio>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="js\script.js"></script>
+<script src="js\spoti.js"></script>
+<!-- Agrega las referencias a los archivos JavaScript de Vue.js -->
+<script src="https://unpkg.com/vue@next"></script>
+
+<script src="./js/main.js"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="./js/asistencia.js"></script>
+</body> 
+</html>
