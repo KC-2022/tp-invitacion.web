@@ -101,19 +101,6 @@ sonidoMusicaOn.addEventListener('click', () => {
 });
 musica.play();
 
-function validarFormulario() {
-  const nombre = document.getElementById("nombre").value.trim();
-  const email = document.getElementById("email").value.trim();
-
-
-  // Validar nombre
-  if (nombre === "") {
-    alert("Por favor, ingrese su nombre");
-    return false;
-  }
-  return true;
-}
-
 // Fech evento
 var countDownDate = new Date("Oct 20, 2023 21:30:00").getTime();
 

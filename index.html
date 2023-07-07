@@ -8,7 +8,7 @@
     <script src="https://sdk.scdn.co/spotify-player.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css\stylo.css">
+    <link rel="stylesheet" href="./css/stylo.css">
     <link rel="icon" type="image/png" href=""/>
     <title>Miss Quince</title>
 </head>
@@ -36,7 +36,7 @@
             <h3>Confirmar asistencia</h3>
             <input type="email" id="email" name="email" required placeholder="Correo Electrónico" class="box" v-model="correo">
             <input type="name" id="nombre" name="nombre" required placeholder="Nombre Completo" class="box" v-model="nombre">
-            <input type="submit" value="enviar" onclick="return validarFormulario()" class="btn" v-on:click="grabar()">
+            <input type="submit" value="enviar" class="btn" v-on:click="grabar()">
             <p>o confirmar por WhatssApp</p>
             <div class="buttons">
                 <a href="" target="_blank" class="btn">Mama</a>
@@ -196,7 +196,7 @@
     <!--inicio pie de pagina--> 
     <footer>
         <ul class="social_icon">
-            <li><a href="templates\asistencia_editar.html" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a></li>
             <li><a href="" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a></li>
             <li><a href="" target="_blank"><ion-icon name="mail-open-outline"></ion-icon></a></li>
             <li><a href="" target="_blank"><ion-icon name="logo-whatsapp"></ion-icon></a></li>
@@ -228,11 +228,9 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="js\script.js"></script>
-<script src="js\spoti.js"></script>
-<script src="/js/main.js"></script>
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script src="https://unpkg.com/vue@next"></script>
-<script src="js\asistencia.js"></script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><!--Link de VUE-->
+<script src="/js/script.js"></script>
+<script src="/js/spoti.js"></script>
+<script src="js/asistencia.js"></script>
 </body> 
 </html>

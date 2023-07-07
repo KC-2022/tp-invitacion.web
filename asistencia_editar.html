@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Producto Nuevo</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./css/asistencia.css">
+</head>
+<body>
+
+<main>
+<div class="container" id="app">
+<form>
+<h1>Editar asistencia </h1>
+<p> Correo: {{correo}}</p>
+<div class="mb-3">
+<label for="id"> Id </label>
+<input type="number" name="id" id="id" disabled v-model="id" >
+</div>
+<div class="mb-3">
+<label for="nombre">Nombre</label>
+<input type="text" name="nombre" id="nombre" v-model="nombre">
+</div>
+<div class="mb-3">
+<label for="correo">Correo</label>
+<input type="text" name="correo" id="correo" v-model="correo">
+</div>
+<button type="button" class="btn" v-on:click="modificar()">Grabar</button>
+</form>
+</div>
+</main>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="./js/asistencia_editar.js"></script>
+</body>
+</html
