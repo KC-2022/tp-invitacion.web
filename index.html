@@ -34,9 +34,9 @@
         <span class="fas fa-times" id="close-login-form"></span>
         <form method="POST">  
             <h3>Confirmar asistencia</h3>
-            <input type="email" id="email" name="email" required placeholder="Correo Electrónico" class="box" v-model="correo">
-            <input type="name" id="nombre" name="nombre" required placeholder="Nombre Completo" class="box" v-model="nombre">
-            <input type="submit" value="enviar" class="btn" v-on:click="grabar()">
+            <input type="email" id="email" name="email" placeholder="Correo Electrónico" class="box" v-model="correo">
+            <input type="name" id="nombre" name="nombre" placeholder="Nombre Completo" class="box" v-model="nombre">
+            <button class="btn" @click.prevent="enviarFormulario()">Enviar</button>
             <p>o confirmar por WhatssApp</p>
             <div class="buttons">
                 <a href="" target="_blank" class="btn">Mama</a>

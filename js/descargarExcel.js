@@ -1,19 +1,34 @@
 function descargarExcel() {
-  // Clonar la tabla de asistencias
+  // Obtener los datos de la tabla de asistencias
+  var data = [];
   var tabla = document.getElementById('tabla-asistencias');
-  var tablaClonada = tabla.cloneNode(true);
+  var filas = tabla.querySelectorAll('tbody tr');
 
-  // Eliminar la columna "Acciones" de la tabla clonada
-  var columnasAcciones = tablaClonada.querySelectorAll('[data-column="acciones"]');
-  columnasAcciones.forEach(function (columna) {
-    columna.remove();
+  // Obtener los encabezados de columna
+  var encabezados = [];
+  var encabezadosTabla = tabla.querySelectorAll('thead th');
+  encabezadosTabla.forEach(function (encabezado) {
+    encabezados.push(encabezado.innerText);
+  });
+  data.push(encabezados);
+
+  // Recorrer las filas de la tabla y obtener los datos de cada celda
+  filas.forEach(function (fila) {
+    var rowData = [];
+    var celdas = fila.querySelectorAll('td');
+
+    celdas.forEach(function (celda) {
+      rowData.push(celda.innerText);
+    });
+
+    data.push(rowData);
   });
 
-  // Crear un nuevo libro de Excel
+  // Crear un libro de Excel
   var workbook = XLSX.utils.book_new();
+  var worksheet = XLSX.utils.aoa_to_sheet(data);
 
-  // Crear una hoja de cálculo y agregar los datos de la tabla clonada
-  var worksheet = XLSX.utils.table_to_sheet(tablaClonada);
+  // Agregar la hoja de cálculo al libro
   XLSX.utils.book_append_sheet(workbook, worksheet, 'Asistencias');
 
   // Guardar el archivo Excel
@@ -21,6 +36,10 @@ function descargarExcel() {
   var nombreArchivo = 'listado-asistencias-' + fecha + '.xlsx';
   XLSX.writeFile(workbook, nombreArchivo);
 }
+
+
+
+
 
 
 
