@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Administrador</title>
+  <link rel="stylesheet" href="./css/admin.css">    
+</head>
+<body>
+  <h1>Acceso Administrador</h1>
+  <form id="login-form">
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+    <button id="back-button">Regresar</button>
+  </form>
+
+  <script>
+    // Obtener referencias a los elementos del formulario
+    const loginForm = document.getElementById('login-form');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const backButton = document.getElementById('back-button');
+
+    // Función de inicio de sesión
+    function login(event) {
+      event.preventDefault();
+
+      // Obtener los valores de usuario y contraseña ingresados
+      const username = usernameInput.value;
+      const password = passwordInput.value;
+
+      // Validar las credenciales (en este ejemplo, se usa una combinación predefinida)
+      if (username === 'admin' && password === 'admin123') {
+        // Credenciales válidas, almacenar la información de inicio de sesión en el almacenamiento local
+        localStorage.setItem('loggedIn', 'true');
+        localStorage.setItem('username', username);
+
+        // Redirigir al usuario a asistencia.html
+        window.location.href = 'asistencia.html';
+      } else {
+        // Credenciales inválidas
+        alert('Invalid credentials');
+      }
+    }
+
+    // Función para regresar al index
+    function goBack() {
+      window.location.href = 'index.html';
+    }
+
+    // Agregar el evento de envío del formulario
+    loginForm.addEventListener('submit', login);
+
+    // Agregar el evento de clic al botón de regreso
+    backButton.addEventListener('click', goBack);
+  </script>
+</body>
+</html>

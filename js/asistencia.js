@@ -9,7 +9,15 @@ createApp({
       id: 0,
       nombre: "",
       correo: "",
+      totalAsistentes: 0, // Inicializar el total en 0
     };
+
+  },
+  computed: {
+    // Propiedad computada para calcular el total de asistentes
+    totalConfirmados() {
+      return this.asistencia.length;
+    },
   },
   methods: {
     fetchData(url) {

@@ -22,6 +22,7 @@
                 <p>Lo sentimos , ........</p>
             </div>
             <div v-else>
+                <p>Total de invitados confirmados: {{ totalConfirmados }}</p>
                 <section v-if="cargando">
                     <div class="spinner-border"></div>
                     <p>Cargando .....</p>

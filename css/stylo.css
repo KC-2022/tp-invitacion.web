@@ -582,6 +582,15 @@ footer p {
     font-size: 1.5em;
     opacity: 0.75;
 }
+#ad.lin{
+    color: var(--ligth-color);
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    opacity: 0.75;
+
+}
 /*MENSAJE DE BIENVENIDA*/
 .modal {
     display: none; /* ocultar por defecto */

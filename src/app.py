@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, redirect
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
@@ -69,6 +69,23 @@ def update_asistencia(id):
     asistencia.correo = request.json['correo']
     db.session.commit()
     return asistencia_schema.jsonify(asistencia)
+
+# Usuario y contraseña predefinidos (simulados)
+admin_username = "admin"
+admin_password = "admin123"
+
+@app.route('/admin-login', methods=['POST'])
+def admin_login():
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
+
+    if username == admin_username and password == admin_password:
+        # Credenciales válidas
+        return redirect('/asistencia.html')  # Redireccionar a asistencia.html
+    else:
+        # Credenciales inválidas
+        return jsonify({'message': 'Invalid credentials'})
 
 
 if __name__ == '__main__':
